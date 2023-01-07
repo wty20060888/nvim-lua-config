@@ -5,10 +5,10 @@ packer.startup({
     use 'wbthomason/packer.nvim'
     -- tokyonight
     use("folke/tokyonight.nvim")
-    -- nvim-tree 
+    -- nvim-tree
     use({ "kyazdani42/nvim-tree.lua", requires = "kyazdani42/nvim-web-devicons" })
     -- bufferline
-    use({ "akinsho/bufferline.nvim", requires = { "kyazdani42/nvim-web-devicons", "moll/vim-bbye" }})
+    use({ "akinsho/bufferline.nvim", requires = { "kyazdani42/nvim-web-devicons", "moll/vim-bbye" } })
     -- lualine
     use({ "nvim-lualine/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons" } })
     use("arkav/lualine-lsp-progress")
@@ -50,24 +50,32 @@ packer.startup({
     use("onsails/lspkind-nvim")
     -- matchup search
     use "andymass/vim-matchup"
-    use {'kevinhwang91/nvim-hlslens'}
+    use { 'kevinhwang91/nvim-hlslens' }
     use {
-    "phaazon/hop.nvim", -- like easymotion, but more powerful
-    branch = "v1", -- optional but strongly recommended
+      "phaazon/hop.nvim", -- like easymotion, but more powerful
+      branch = "v1", -- optional but strongly recommended
     }
     -- PreviewMarkdown
     use({
-    "iamcco/markdown-preview.nvim",
-     run = function() vim.fn["mkdp#util#install"]() end,
-      })
+      "iamcco/markdown-preview.nvim",
+      run = function() vim.fn["mkdp#util#install"]() end,
+    })
     use {
-    "skanehira/preview-markdown.vim",
-    opt = true,
-    cmd = "PreviewMarkdown",}
+      "skanehira/preview-markdown.vim",
+      opt = true,
+      cmd = "PreviewMarkdown",
+    }
     --markdown paste
-    use {"md-img-paste-devs/md-img-paste.vim"}
+    use { "md-img-paste-devs/md-img-paste.vim" }
     --markdown table mode
-    use {"dhruvasagar/vim-table-mode"}
+    use { "dhruvasagar/vim-table-mode" }
+    -- Git
+    use {
+      "lewis6991/gitsigns.nvim",
+    }
+    use 'sindrets/diffview.nvim'
+    -- use "tanvirtin/vgit.nvim"
+    -- use "tpope/vim-fugitive"
 
 
   end,
