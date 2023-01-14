@@ -18,6 +18,10 @@ packer.startup({
     use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
     -- icons
     use "kyazdani42/nvim-web-devicons"
+    use 'mortepau/codicons.nvim'
+    -- vim surround
+    use "tpope/vim-surround"
+    use "tpope/vim-repeat" --  . command enhance
     -- LSP
     use("williamboman/nvim-lsp-installer")
     -- Lspconfig
@@ -76,7 +80,21 @@ packer.startup({
     use 'sindrets/diffview.nvim'
     -- use "tanvirtin/vgit.nvim"
     -- use "tpope/vim-fugitive"
-
+    -- Debugger
+    use "ravenxrz/DAPInstall.nvim" -- help us install several debuggers
+    use {
+      "mfussenegger/nvim-dap",
+      -- commit = "f9480362549e2b50a8616fe4530deaabbc4f889b",
+    }
+    use "theHamsta/nvim-dap-virtual-text"
+    use "rcarriga/nvim-dap-ui"
+    use "mfussenegger/nvim-dap-python" -- debug python
+    -- use { "leoluz/nvim-dap-go", module = "dap-go" } -- debug golang
+    use { "jbyuki/one-small-step-for-vimkind", module = "osv" } -- debug any Lua code running in a Neovim instance
+    use {
+      "ravenxrz/nvim-gdb",
+      run = "./install.sh"
+    }
 
   end,
   config = {

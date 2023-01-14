@@ -27,10 +27,10 @@ vim.cmd("map J 5j")
 vim.cmd("map K 5k")
 vim.cmd("map <leader><cr> :nohlsearch<cr>")
 -- Alt + hjkl  窗口之间跳转
-map("n", "<A-h>", "<C-w>h", opts)
-map("n", "<A-j>", "<C-w>j", opts)
-map("n", "<A-k>", "<C-w>k", opts)
-map("n", "<A-l>", "<C-w>l", opts)
+map("n", "<leader>h", "<C-w>h", opts)
+map("n", "<leader>j", "<C-w>j", opts)
+map("n", "<leader>k", "<C-w>k", opts)
+map("n", "<leader>l", "<C-w>l", opts)
 -- Better terminal navigation
 map("t", "<ESC>", "<C-\\><C-N>", term_opts)
 
@@ -62,12 +62,14 @@ pluginKeys.nvimTreeList = {
   { key = "o", action = "system_open" },
   { key = "<BS>", action = "toggle_dotfiles" },
   { key = "H", action = "" },
+  { key = "yrp", action = "copy_path" },
+  { key = "yap", action = "copy_absolute_path" },
 }
 
 -- bufferline
 -- 左右Tab切换
-map("n", "<leader>h", ":BufferLineCyclePrev<CR>", opts)
-map("n", "<leader>l", ":BufferLineCycleNext<CR>", opts)
+map("n", "<A-h>", ":BufferLineCyclePrev<CR>", opts)
+map("n", "<A-l>", ":BufferLineCycleNext<CR>", opts)
 -- 关闭
 --"moll/vim-bbye"
 map("n", "<leader>q", ":Bdelete!<CR>", opts)
@@ -149,4 +151,18 @@ end
 -- iron
 map("n", "<leader>ju", ":IronRepl<cr>", opts)
 map("v", "<leader>s", "y<C-w>jpi<cr><C-\\><C-N><C-w>k", term_opts)
+-- dap
+map("n", "<leader>b", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)
+map("n", "<leader>dB", "<cmd>lua require'dap'.set_breakpoint(vim.fn.input '[Condition] > ')<cr>", opts)
+-- keymap("n", "<leader>dr", "lua require'dap'.repl.open()<cr>", opts)
+map("n", "<F9>", "<cmd>lua require'dap'.run_last()<cr>", opts)
+map('n', '<F10>', '<cmd>lua require"user.dap.dap-util".reload_continue()<CR>', opts)
+map("n", "<F4>", "<cmd>lua require'dap'.terminate()<cr>", opts)
+map("n", "<F5>", "<cmd>lua require'dap'.continue()<cr>;", opts)
+map("n", "<leader>d", "<cmd>lua require'dap'.continue()<cr>;", opts)
+map("n", "<F6>", "<cmd>lua require'dap'.step_over()<cr>", opts)
+map("n", "<F7>", "<cmd>lua require'dap'.step_into()<cr>", opts)
+map("n", "<F8>", "<cmd>lua require'dap'.step_out()<cr>", opts)
+map("n", "<F3>", "<cmd>lua require'dapui'.eval()<cr>", opts)
+
 return pluginKeys
