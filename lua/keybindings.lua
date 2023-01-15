@@ -159,10 +159,9 @@ map("n", "<F9>", "<cmd>lua require'dap'.run_last()<cr>", opts)
 map('n', '<F10>', '<cmd>lua require"user.dap.dap-util".reload_continue()<CR>', opts)
 map("n", "<F4>", "<cmd>lua require'dap'.terminate()<cr>", opts)
 map("n", "<F5>", "<cmd>lua require'dap'.continue()<cr>;", opts)
-map("n", "<leader>d", "<cmd>lua require'dap'.continue()<cr>;", opts)
-map("n", "<F6>", "<cmd>lua require'dap'.step_over()<cr>", opts)
-map("n", "<F7>", "<cmd>lua require'dap'.step_into()<cr>", opts)
+map("n", "<F7>", "<cmd>lua require'dap'.step_over()<cr>", opts)
+map("n", "<F6>", "<cmd>lua require'dap'.step_into()<cr>", opts)
 map("n", "<F8>", "<cmd>lua require'dap'.step_out()<cr>", opts)
-map("n", "<F3>", "<cmd>lua require'dapui'.eval()<cr>", opts)
+map("n", "ge", "<cmd>lua require'dapui'.eval()<cr>", opts)
 
 return pluginKeys

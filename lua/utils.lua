@@ -68,4 +68,10 @@ vim.api.nvim_create_user_command('Tes',
   end,
   { nargs = "*"})
 
+vim.api.nvim_create_user_command('Terminatedap',
+  function()
+    vim.cmd([[lua require'dap'.terminate()]])
+  end,
+  { nargs = "*"})
+
 return M

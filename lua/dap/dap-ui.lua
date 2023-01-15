@@ -25,7 +25,7 @@ dapui.setup({
     },
     {
       elements = {
-        -- 'stacks',
+        'stacks',
         'breakpoints',
         'watches',
       },

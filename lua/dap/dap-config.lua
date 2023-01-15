@@ -38,6 +38,9 @@ local dap, dapui = require("dap"), require("dapui")
     dapui.open()
     vim.api.nvim_command("DapVirtualTextEnable")
     vim.api.nvim_command("NvimTreeClose")
+    --vim.cmd([[:autocmd CursorHold * :lua require'dapui'.eval()]])
+
+
   end
   local debug_close = function()
     dap.repl.close()
