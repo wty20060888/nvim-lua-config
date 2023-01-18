@@ -27,10 +27,10 @@ vim.cmd("map J 5j")
 vim.cmd("map K 5k")
 vim.cmd("map <leader><cr> :nohlsearch<cr>")
 -- Alt + hjkl  窗口之间跳转
-map("n", "<leader>h", "<C-w>h", opts)
-map("n", "<leader>j", "<C-w>j", opts)
-map("n", "<leader>k", "<C-w>k", opts)
-map("n", "<leader>l", "<C-w>l", opts)
+map("n", "<A-h>", "<C-w>h", opts)
+map("n", "<A-j>", "<C-w>j", opts)
+map("n", "<A-k>", "<C-w>k", opts)
+map("n", "<A-l>", "<C-w>l", opts)
 -- Better terminal navigation
 map("t", "<ESC>", "<C-\\><C-N>", term_opts)
 
@@ -68,8 +68,8 @@ pluginKeys.nvimTreeList = {
 
 -- bufferline
 -- 左右Tab切换
-map("n", "<A-h>", ":BufferLineCyclePrev<CR>", opts)
-map("n", "<A-l>", ":BufferLineCycleNext<CR>", opts)
+map("n", "<C-h>", ":BufferLineCyclePrev<CR>", opts)
+map("n", "<C-l>", ":BufferLineCycleNext<CR>", opts)
 -- 关闭
 --"moll/vim-bbye"
 map("n", "<leader>q", ":Bdelete!<CR>", opts)
@@ -159,6 +159,7 @@ map("n", "<F9>", "<cmd>lua require'dap'.run_last()<cr>", opts)
 map('n', '<F10>', '<cmd>lua require"user.dap.dap-util".reload_continue()<CR>', opts)
 map("n", "<F4>", "<cmd>lua require'dap'.terminate()<cr>", opts)
 map("n", "<F5>", "<cmd>lua require'dap'.continue()<cr>;", opts)
+map("n", "<leader>d", "<cmd>lua require'dap'.continue()<cr>;", opts)
 map("n", "<F7>", "<cmd>lua require'dap'.step_over()<cr>", opts)
 map("n", "<F6>", "<cmd>lua require'dap'.step_into()<cr>", opts)
 map("n", "<F8>", "<cmd>lua require'dap'.step_out()<cr>", opts)

@@ -57,7 +57,7 @@ local list_keys = require('keybindings').nvimTreeList
 --})
 -- 自动关闭
 vim.cmd([[
-  autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif
+  autocmd BufEnter * if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif
 ]])
 
 
