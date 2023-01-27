@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/Users/wangtianyu/.local/share/nvim/site/pack/packer/start/DAPInstall.nvim",
     url = "https://github.com/ravenxrz/DAPInstall.nvim"
   },
+  ["auto-pairs"] = {
+    loaded = true,
+    path = "/Users/wangtianyu/.local/share/nvim/site/pack/packer/start/auto-pairs",
+    url = "https://github.com/jiangmiao/auto-pairs"
+  },
   ["bufferline.nvim"] = {
     loaded = true,
     path = "/Users/wangtianyu/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
