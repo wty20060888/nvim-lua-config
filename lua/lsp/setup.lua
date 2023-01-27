@@ -106,7 +106,16 @@ require("lspconfig")["sumneko_lua"].setup {
   },
 }
 
+require('lspconfig')['clangd'].setup {
+  on_attach = on_attach,
+  flags = lsp_flags,
+}
+
+--TODO: arduino lsp server启动问题
 --require("lspconfig")["arduino_language_server"].setup{
+--  on_attach = on_attach,
+--  flags = lsp_flags,
+--
 --      cmd = {
 --        "arduino-language-server",
 --        "-cli-config", "/Users/wangtianyu/Library/Arduino15/arduino-cli.yaml",
