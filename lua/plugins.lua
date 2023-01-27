@@ -95,6 +95,7 @@ packer.startup({
       "ravenxrz/nvim-gdb",
       run = "./install.sh"
     }
+    use "jiangmiao/auto-pairs"
 
   end,
   config = {

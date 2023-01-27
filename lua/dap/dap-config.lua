@@ -43,7 +43,7 @@ local dap, dapui = require("dap"), require("dapui")
 
   end
   local debug_close = function()
-    dap.repl.close()
+    --dap.repl.close()
     dapui.close()
     vim.api.nvim_command("DapVirtualTextDisable")
     vim.api.nvim_command("NvimTreeOpen")
@@ -73,7 +73,7 @@ local function config_debuggers()
   dap.set_log_level("DEBUG")
 
   -- load from json file
-  require('dap.ext.vscode').load_launchjs(nil, { cppdbg = { 'cpp' } })
+  -- require('dap.ext.vscode').load_launchjs(nil, { cppdbg = { 'cpp' } })
   -- config per launage
   -- require("user.dap.dap-cpp")
   require("dap.di-cpp")
@@ -91,5 +91,6 @@ function M.setup()
   config_dapui()
   config_debuggers() -- Debugger
 end
+
 
 return M

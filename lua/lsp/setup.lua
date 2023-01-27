@@ -2,6 +2,7 @@ local lsp_installer = require("nvim-lsp-installer")
 local lspconfig_window = require("lspconfig.ui.windows")
 local old_defaults = lspconfig_window.default_opts
 
+
 lsp_installer.setup({
   automatic_installation = true, -- automatically detect which servers to install (based on which servers are set up via lspconfig)
   ui = {
@@ -9,8 +10,10 @@ lsp_installer.setup({
       server_installed = "✓",
       server_pending = "➜",
       --server_uninstalled = "✗"
-    }
+    },
+    border = "rounded"
   }
+
 })
 
 
@@ -102,3 +105,13 @@ require("lspconfig")["sumneko_lua"].setup {
     },
   },
 }
+
+--require("lspconfig")["arduino_language_server"].setup{
+--      cmd = {
+--        "arduino-language-server",
+--        "-cli-config", "/Users/wangtianyu/Library/Arduino15/arduino-cli.yaml",
+--        "-fqbn",
+--        "arduino:avr:uno"
+--    }
+--
+--}
