@@ -18,24 +18,24 @@ require "lsp_signature".setup({
   -- this setting will be helpful if you do not want the PUM and floating win overlap
 
   floating_window_off_x = 1, -- adjust float windows x position.
---  floating_window_off_y = 1, -- adjust float windows y position. e.g. set to -2 can make floating window move up 2 lines
-    floating_window_off_y = function() -- adjust float windows y position. e.g. set to -2 can make floating window move up 2 lines
-    local linenr = vim.api.nvim_win_get_cursor(0)[1] -- buf line number
-    local pumheight = vim.o.pumheight
-    local winline = vim.fn.winline() -- line number in the window
-    local winheight = vim.fn.winheight(0)
-
-    -- window top
-    if winline - 1 < pumheight then
-      return 1
-
-    -- window bottom
-    elseif winheight - winline < pumheight then
-      return -1
-    else
-      return 1
-    end
-  end,
+  floating_window_off_y = 0, -- adjust float windows y position. e.g. set to -2 can make floating window move up 2 lines
+--    floating_window_off_y = function() -- adjust float windows y position. e.g. set to -2 can make floating window move up 2 lines
+--    local linenr = vim.api.nvim_win_get_cursor(0)[1] -- buf line number
+--    local pumheight = vim.o.pumheight
+--    local winline = vim.fn.winline() -- line number in the window
+--    local winheight = vim.fn.winheight(0)
+--
+--    -- window top
+--    if winline - 1 < pumheight then
+--      return 1
+--
+--    -- window bottom
+--    elseif winheight - winline < pumheight then
+--      return -1
+--    else
+--      return 1
+--    end
+--  end,
   fix_pos = false,  -- set to true, the floating window will not auto-close until finish all parameters
   hint_enable = true, -- virtual hint enable
   hint_prefix = "🐼 ",  -- Panda for parameter

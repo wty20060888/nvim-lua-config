@@ -73,13 +73,14 @@ local function config_debuggers()
   dap.set_log_level("DEBUG")
 
   -- load from json file
-  -- require('dap.ext.vscode').load_launchjs(nil, { cppdbg = { 'cpp' } })
+  require('dap.ext.vscode').load_launchjs(nil, { cppdbg = { 'cpp' } })
   -- config per launage
-  -- require("user.dap.dap-cpp")
-  require("dap.di-cpp")
+  require("dap.dap-cpp")
+  --require("dap.di-cpp")
   -- require("user.dap.dap-go")
   require("dap.di-go")
-  require("dap.di-python")
+  require("dap.dap-python")
+  --require("dap.di-python")
   -- require("user.dap.dap-cpp")
   -- require("config.dap.python").setup()
   -- require("config.dap.rust").setup()

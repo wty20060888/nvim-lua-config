@@ -7,15 +7,15 @@ local dap_install = require("dap-install")
         name = "Launch file";
         program = "${file}";
         pythonPath = function()
-          return '/usr/bin/python'
+          return '/usr/local/bin/python3'
         end;
       },
     }
 
   dap.adapters.python = {
     type = 'executable';
-    --command = '/usr/local/bin/python3';
-    command = "python3";
+    command = '/usr/local/bin/python3';
+    --command = "python3";
 
     args = { '-m', 'debugpy.adapter' };
   }
