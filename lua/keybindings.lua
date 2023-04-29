@@ -121,6 +121,10 @@ map("n", "gk", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
 map("n", "gj", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
 map("n", "gf", "<cmd>lua vim.lsp.buf.format {async = true}<CR>", opts)
 
+-- copilot map按右键自动补全
+vim.cmd[[imap <silent><script><expr> <Right> copilot#Accept("\<Right>")
+let g:copilot_no_tab_map = v:true
+]]
 -- nvim-cmp 自动补全
 pluginKeys.cmp = function(cmp)
   return {
