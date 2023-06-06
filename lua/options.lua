@@ -1,6 +1,6 @@
 local options = {
   backup = false,                          -- creates a backup file
-  clipboard = "unnamedplus",               -- allows neovim to access the system clipboard
+  --clipboard = "unnamedplus",               -- allows neovim to access the system clipboard
   cmdheight = 1,                           -- keep status bar position close to bottom
   completeopt = { "menuone", "noselect" }, -- mostly just for cmp
   conceallevel = 0,                        -- so that `` is visible in markdown files
@@ -46,10 +46,17 @@ local options = {
 
 vim.opt.shortmess:append "c"
 
-for k, v in pairs(options) do
-  vim.opt[k] = v
-end
+--for k, v in pairs(options) do
+--  vim.opt[k] = v
+--end
 
 vim.cmd "set whichwrap+=<,>,[,]"
 vim.cmd [[set iskeyword+=-]]
 vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
+vim.cmd([[set clipboard+=unnamedplus]])
+
+-- copilot markdown设置
+vim.cmd([[let g:copilot_filetypes = {
+                              \ 'markdown': v:true,
+                              \ }
+ ]])

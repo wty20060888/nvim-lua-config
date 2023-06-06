@@ -74,9 +74,9 @@ packer.startup({
     --markdown table mode
     use { "dhruvasagar/vim-table-mode" }
     -- Git
-    use {
-      "lewis6991/gitsigns.nvim",
-    }
+    --use {
+    --  "lewis6991/gitsigns.nvim",
+    --}
     use 'sindrets/diffview.nvim'
     -- use "tanvirtin/vgit.nvim"
     -- use "tpope/vim-fugitive"

@@ -70,8 +70,18 @@ vim.api.nvim_create_user_command('Tes',
 
 vim.api.nvim_create_user_command('TerminateDap',
   function()
+    vim.cmd([[Copilot enable]])
     vim.cmd([[lua require'dap'.terminate()]])
   end,
   { nargs = "*"})
+
+vim.api.nvim_create_user_command('StartDap',
+  function()
+    vim.cmd([[Copilot disable]])
+    vim.cmd([[lua require'dap'.continue()]])
+  end,
+  { nargs = "*"})
+
+--vim.cmd([[autocmd BufEnter * :NvimTreeOpen<CR>]])
 
 return M

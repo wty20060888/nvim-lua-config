@@ -45,7 +45,7 @@ iron.setup {
         --command = {"ipython", "--no-autoindent"}
       }
     },
-    repl_open_cmd ='below 15 split',
+    repl_open_cmd ='below 8 split',
     preferred = { python = "jupyter" },
     -- how the REPL window will be opened, the default is opening
     -- a float window of height 40 at the bottom.
