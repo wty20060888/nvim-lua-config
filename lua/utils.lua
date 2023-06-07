@@ -68,20 +68,45 @@ vim.api.nvim_create_user_command('Tes',
   end,
   { nargs = "*"})
 
-vim.api.nvim_create_user_command('TerminateDap',
+vim.api.nvim_create_user_command('DapStop',
   function()
-    vim.cmd([[Copilot enable]])
     vim.cmd([[lua require'dap'.terminate()]])
+    vim.cmd([[Copilot enable]])
   end,
   { nargs = "*"})
 
-vim.api.nvim_create_user_command('StartDap',
+vim.api.nvim_create_user_command('DapRunLast',
+  function()
+    vim.cmd([[wall]])
+    vim.cmd([[lua require'dap'.run_last()]])
+  end,
+  { nargs = "*"})
+
+
+vim.api.nvim_create_user_command('DapStart',
   function()
     vim.cmd([[Copilot disable]])
     vim.cmd([[lua require'dap'.continue()]])
   end,
   { nargs = "*"})
-
 --vim.cmd([[autocmd BufEnter * :NvimTreeOpen<CR>]])
+vim.cmd([[
+function! DeleteHiddenBuffers()
+    let i=1
+    let lastbuf=bufnr("$")
+    while i <= lastbuf
+        if buflisted(i) && bufwinnr(i) == -1
+        sil exe "bdelete" i
+        endif
+        let i=i+1
+    endwhile
+endfunction
+]])
+vim.cmd([[
+augroup custom_term
+    autocmd!
+    autocmd TermOpen * setlocal bufhidden=hide
+augroup END
+]])
 
 return M

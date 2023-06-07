@@ -43,12 +43,12 @@ local dap, dapui = require("dap"), require("dapui")
 
   end
   local debug_close = function()
-    --dap.repl.close()
+    --dap.repl.close({mode="toggle"})
     dapui.close()
     vim.api.nvim_command("DapVirtualTextDisable")
     vim.api.nvim_command("NvimTreeOpen")
     vim.api.nvim_command("wincmd w")
-    -- vim.api.nvim_command("bdelete! term:")   -- close debug temrinal
+    --vim.api.nvim_command("bdelete! term:")   -- close debug temrinal
   end
 
   dap.listeners.after.event_initialized["dapui_config"] = function()
