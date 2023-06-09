@@ -48,7 +48,7 @@ func! RunBuild(...)
 	for item in a:000
 		let params=params.item." "
 	endfor
-        exec "ter python3 % ".params
+        exec "ter python3.10 % ".params
       elseif &filetype == 'html'
         exec "!open %"
       elseif &filetype == 'markdown'

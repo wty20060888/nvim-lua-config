@@ -85,6 +85,7 @@ vim.api.nvim_create_user_command('DapRunLast',
 
 vim.api.nvim_create_user_command('DapStart',
   function()
+    vim.cmd([[w]])
     vim.cmd([[Copilot disable]])
     vim.cmd([[lua require'dap'.continue()]])
   end,
