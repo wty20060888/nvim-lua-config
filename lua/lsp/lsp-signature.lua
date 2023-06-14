@@ -60,5 +60,30 @@ require "lsp_signature".setup({
   shadow_blend = 36, -- if you using shadow as border use this set the opacity
   shadow_guibg = 'Blue', -- if you using shadow as border use this set the color e.g. 'Green' or '#121315'
   timer_interval = 200, -- default timer check interval set to lower value if you want to reduce latency
-  toggle_key = nil -- toggle signature on and off in insert mode,  e.g. toggle_key = '<M-x>'
+  toggle_key = "<M-x>", -- toggle signature on and off in insert mode,  e.g. toggle_key = '<M-x>'
+  move_cursor_key = "<C-w>"-- imap, use nvim_set_current_win to move cursor between current win and floating
 })
+
+--local function escape_term_codes(str)
+--  return vim.api.nvim_replace_termcodes(str, true, false, true)
+--end
+--
+--local function is_float_open(window_id)
+--  return window_id and window_id ~= 0 and vim.api.nvim_win_is_valid(window_id)
+--end
+--
+--local function scroll_float(mapping)
+--  -- Using the global config of the lsp_signature plugin
+--  local window_id = _G._LSP_SIG_CFG.winnr
+--
+--  if is_float_open(window_id) then
+--    vim.fn.win_execute(window_id, 'normal! ' .. mapping)
+--  end
+--end
+--
+--local map = vim.keymap.set
+--local opts = { noremap = true, silent = true }
+--local scroll_up_mapping = escape_term_codes('<C-K>')
+--local scroll_down_mapping = escape_term_codes('<C-J>')
+--map('i', '<C-K>', function() scroll_float(scroll_up_mapping) end, opts)
+--map('i', '<C-J>', function() scroll_float(scroll_down_mapping) end, opts)
