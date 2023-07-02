@@ -26,6 +26,7 @@ lsp_installer.setup({
 local servers = {
   sumneko_lua = require("lsp.config.lua"), -- lua/lsp/config/lua.lua
   pyright = require("lsp.config.pyright"), -- lua/lsp/config/pyright.lua
+  jdtls = require("lsp.config.jdtls"), -- lua/lsp/config/jdtls.lua
 }
 -- 自动安装 Language Servers
 for name, _ in pairs(servers) do
@@ -109,6 +110,9 @@ require("lspconfig")["sumneko_lua"].setup {
 require('lspconfig')['clangd'].setup {
   on_attach = on_attach,
   flags = lsp_flags,
+}
+require('lspconfig')['jdtls'].setup {
+  single_file_support = true,
 }
 
 --TODO: arduino lsp server启动问题
