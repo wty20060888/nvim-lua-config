@@ -74,12 +74,14 @@ local function config_debuggers()
 
   -- load from json file
   require('dap.ext.vscode').load_launchjs(nil, { cppdbg = { 'cpp' } })
+  --require('dap.ext.vscode').load_launchjs("~/.vscode/launch.json", { java = { 'java' } })
   -- config per launage
   require("dap.dap-cpp")
   --require("dap.di-cpp")
   -- require("user.dap.dap-go")
   require("dap.di-go")
   require("dap.dap-python")
+  require("dap.dap-java")
   --require("dap.di-python")
   -- require("user.dap.dap-cpp")
   -- require("config.dap.python").setup()

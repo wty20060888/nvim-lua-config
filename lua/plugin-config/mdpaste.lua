@@ -4,5 +4,6 @@ autocmd FileType markdown nmap <buffer><silent> <leader>p :call mdip#MarkdownCli
 " let g:mdip_imgdir = 'img'
 " let g:mdip_imgname = 'image'
 autocmd FileType markdown nnoremap <buffer><silent> <leader>o :!open -R <cfile><CR>
+autocmd FileType python nnoremap <buffer><silent> <leader>o :!open -R <cfile><CR>
 " nmap <buffer><silent> <leader>of :!open -R <cfile><CR>
 ]])

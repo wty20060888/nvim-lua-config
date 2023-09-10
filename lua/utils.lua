@@ -109,5 +109,28 @@ augroup custom_term
     autocmd TermOpen * setlocal bufhidden=hide
 augroup END
 ]])
+-- 代码折叠设置,按照缩进折叠
+vim.cmd([[
+" 检测文件类型
+autocmd FileType html setlocal foldmethod=indent
+autocmd FileType python setlocal foldmethod=indent
+set nofoldenable
+
+
+" 自动展开所有折叠
+""autocmd FileType html autocmd BufReadPost * normal! zR
+""autocmd FileType html autocmd BufWritePost * normal! zR
+""autocmd FileType html autocmd BufNewFile * normal! zR
+""autocmd FileType html autocmd BufEnter * normal! zR
+""autocmd FileType python autocmd BufReadPost * normal! zR
+""autocmd FileType python autocmd BufWritePre * normal! zR
+""autocmd FileType python autocmd BufWritePost * normal! zR
+""autocmd FileType python autocmd BufNewFile * normal! zR
+""autocmd FileType python autocmd BufEnter * normal! zR
+
+]])
+vim.cmd([[
+au BufNewFile,BufRead *.djangohtml,*.html set filetype=html
+]])
 
 return M

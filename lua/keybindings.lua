@@ -48,22 +48,22 @@ pluginKeys.nvimTreeList = {
   --{ key = "v", action = "vsplit" },
   --{ key = "h", action = "split" },
   -- 显示隐藏文件
-  { key = "i", action = "toggle_custom" }, -- 对应 filters 中的 custom (node_modules)
-  { key = ".", action = "toggle_dotfiles" }, -- Hide (dotfiles)
+  { key = "i",                              action = "toggle_custom" },   -- 对应 filters 中的 custom (node_modules)
+  { key = ".",                              action = "toggle_dotfiles" }, -- Hide (dotfiles)
   -- 文件操作
-  { key = "<F5>", action = "refresh" },
+  { key = "<F5>",                           action = "refresh" },
   { key = { "<CR>", "l", "<2-LeftMouse>" }, action = "edit" },
-  { key = "a", action = "create" },
-  { key = "d", action = "remove" },
-  { key = "r", action = "rename" },
-  { key = "x", action = "cut" },
-  { key = "c", action = "copy" },
-  { key = "p", action = "paste" },
-  { key = "o", action = "system_open" },
-  { key = "<BS>", action = "toggle_dotfiles" },
-  { key = "H", action = "" },
-  { key = "yrp", action = "copy_path" },
-  { key = "yap", action = "copy_absolute_path" },
+  { key = "a",                              action = "create" },
+  { key = "d",                              action = "remove" },
+  { key = "r",                              action = "rename" },
+  { key = "x",                              action = "cut" },
+  { key = "c",                              action = "copy" },
+  { key = "p",                              action = "paste" },
+  { key = "o",                              action = "system_open" },
+  { key = "<BS>",                           action = "toggle_dotfiles" },
+  { key = "H",                              action = "" },
+  { key = "yrp",                            action = "copy_path" },
+  { key = "yap",                            action = "copy_absolute_path" },
 }
 
 -- bufferline
@@ -122,7 +122,7 @@ map("n", "gj", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
 map("n", "gf", "<cmd>lua vim.lsp.buf.format {async = true}<CR>", opts)
 
 -- copilot map按右键自动补全
-vim.cmd[[imap <silent><script><expr> <Right> copilot#Accept("\<Right>")
+vim.cmd [[imap <silent><script><expr> <Right> copilot#Accept("\<Right>")
 let g:copilot_no_tab_map = v:true
 ]]
 -- nvim-cmp 自动补全

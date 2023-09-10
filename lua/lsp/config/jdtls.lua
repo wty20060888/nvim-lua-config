@@ -1,4 +1,4 @@
-vim.cmd[[
+vim.cmd [[
 let g:jdtls_start_server_async = 0
 ]]
 

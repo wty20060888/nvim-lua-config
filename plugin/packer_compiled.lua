@@ -149,15 +149,15 @@ _G.packer_plugins = {
     path = "/Users/wangtianyu/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
-  ["gitsigns.nvim"] = {
-    loaded = true,
-    path = "/Users/wangtianyu/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
-    url = "https://github.com/lewis6991/gitsigns.nvim"
-  },
   ["hop.nvim"] = {
     loaded = true,
     path = "/Users/wangtianyu/.local/share/nvim/site/pack/packer/start/hop.nvim",
     url = "https://github.com/phaazon/hop.nvim"
+  },
+  ["indent-blankline.nvim"] = {
+    loaded = true,
+    path = "/Users/wangtianyu/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
+    url = "https://github.com/lukas-reineke/indent-blankline.nvim"
   },
   ["iron.nvim"] = {
     loaded = true,
@@ -188,6 +188,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/wangtianyu/.local/share/nvim/site/pack/packer/start/markdown-preview.nvim",
     url = "https://github.com/iamcco/markdown-preview.nvim"
+  },
+  ["mason-lspconfig.nvim"] = {
+    loaded = true,
+    path = "/Users/wangtianyu/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
+    url = "https://github.com/williamboman/mason-lspconfig.nvim"
+  },
+  ["mason.nvim"] = {
+    loaded = true,
+    path = "/Users/wangtianyu/.local/share/nvim/site/pack/packer/start/mason.nvim",
+    url = "https://github.com/williamboman/mason.nvim"
   },
   ["md-img-paste.vim"] = {
     loaded = true,
@@ -233,11 +243,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/wangtianyu/.local/share/nvim/site/pack/packer/start/nvim-lightbulb",
     url = "https://github.com/kosayoda/nvim-lightbulb"
-  },
-  ["nvim-lsp-installer"] = {
-    loaded = true,
-    path = "/Users/wangtianyu/.local/share/nvim/site/pack/packer/start/nvim-lsp-installer",
-    url = "https://github.com/williamboman/nvim-lsp-installer"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
@@ -308,6 +313,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/wangtianyu/.local/share/nvim/site/pack/packer/start/vim-matchup",
     url = "https://github.com/andymass/vim-matchup"
+  },
+  ["vim-polyglot"] = {
+    loaded = true,
+    path = "/Users/wangtianyu/.local/share/nvim/site/pack/packer/start/vim-polyglot",
+    url = "https://github.com/sheerun/vim-polyglot"
   },
   ["vim-repeat"] = {
     loaded = true,

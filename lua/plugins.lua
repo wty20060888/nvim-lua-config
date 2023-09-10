@@ -23,7 +23,9 @@ packer.startup({
     use "tpope/vim-surround"
     use "tpope/vim-repeat" --  . command enhance
     -- LSP
-    use("williamboman/nvim-lsp-installer")
+    --use("williamboman/nvim-lsp-installer")
+    use("williamboman/mason.nvim")
+    use("williamboman/mason-lspconfig.nvim")
     -- Lspconfig
     use({ "neovim/nvim-lspconfig" })
     -- 补全引擎
@@ -96,6 +98,10 @@ packer.startup({
       run = "./install.sh"
     }
     use "jiangmiao/auto-pairs"
+    -- indent-blankline
+    use "lukas-reineke/indent-blankline.nvim"
+    -- 代码折叠
+    use 'sheerun/vim-polyglot'
 
   end,
   config = {

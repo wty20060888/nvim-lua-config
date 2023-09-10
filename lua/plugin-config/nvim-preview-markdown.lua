@@ -38,8 +38,8 @@ func! RunBuild(...)
         exec "!g++ % -o %<"
         exec "!time ./%<"
       elseif &filetype == 'java'
-        "exec "!javac %"
-        exec "ter java %"
+        exec "ter javac % && java %<"
+        "exec "ter java %<"
       elseif &filetype == 'sh'
         exec ":!time bash %"
       elseif &filetype == 'python'

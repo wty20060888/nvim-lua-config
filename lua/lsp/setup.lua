@@ -1,18 +1,24 @@
-local lsp_installer = require("nvim-lsp-installer")
+--local lsp_installer = require("nvim-lsp-installer")
 local lspconfig_window = require("lspconfig.ui.windows")
 local old_defaults = lspconfig_window.default_opts
 
 
-lsp_installer.setup({
-  automatic_installation = true, -- automatically detect which servers to install (based on which servers are set up via lspconfig)
+require("mason").setup({
   ui = {
     icons = {
       server_installed = "✓",
       server_pending = "➜",
-      --server_uninstalled = "✗"
+      server_uninstalled = "✗"
     },
     border = "rounded"
   }
+
+})
+require("mason-lspconfig").setup({
+  ensure_installed = {
+    "pyright",
+    "jdtls",
+  },
 
 })
 
@@ -26,18 +32,26 @@ lsp_installer.setup({
 local servers = {
   sumneko_lua = require("lsp.config.lua"), -- lua/lsp/config/lua.lua
   pyright = require("lsp.config.pyright"), -- lua/lsp/config/pyright.lua
-  jdtls = require("lsp.config.jdtls"), -- lua/lsp/config/jdtls.lua
+  jdtls = require("lsp.config.jdtls"),     -- lua/lsp/config/jdtls.lua
 }
 -- 自动安装 Language Servers
-for name, _ in pairs(servers) do
-  local server_is_found, server = lsp_installer.get_server(name)
-  if server_is_found then
-    if not server:is_installed() then
-      print("Installing " .. name)
-      server:install()
-    end
-  end
-end
+settings = {
+
+  python = {
+    analysis = {
+      typeCheckingMode = "off"
+    }
+  }
+}
+--for name, _ in pairs(servers) do
+--  local server_is_found, server = lsp_installer.get_server(name)
+--  if server_is_found then
+--    if not server:is_installed() then
+--      print("Installing " .. name)
+--      server:install()
+--    end
+--  end
+--end
 
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
@@ -78,8 +92,22 @@ local lsp_flags = {
   debounce_text_changes = 150,
 }
 require('lspconfig')['pyright'].setup {
-  on_attach = on_attach,
-  flags = lsp_flags,
+  --on_attach = on_attach,
+  --flags = lsp_flags,
+  cmd = { 'pyright-langserver', '--stdio' },
+  root_dir = require('lspconfig').util.root_pattern('.git', 'manage.py', 'setup.py', 'pyproject.toml', 'poetry.lock','requirements.txt'),
+  filetypes = { 'python' },
+  capabilities = capabilities,
+  settings = {
+    python = {
+      analysis = {
+        typeCheckingMode = "off",
+        autoSearchPaths = true,
+        useLibraryCodeForTypes = true,
+        diagnosticMode = "workspace",
+      }
+    }
+  },
 }
 
 require("lspconfig")["sumneko_lua"].setup {
@@ -112,7 +140,12 @@ require('lspconfig')['clangd'].setup {
   flags = lsp_flags,
 }
 require('lspconfig')['jdtls'].setup {
+  on_attach = on_attach,
   single_file_support = true,
+}
+require('lspconfig')['html'].setup {
+  on_attach = on_attach,
+  filetypes = { "html", "djangohtml" }, -- 包括"django-html"文件类型
 }
 
 --TODO: arduino lsp server启动问题
