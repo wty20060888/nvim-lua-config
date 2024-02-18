@@ -40,6 +40,8 @@ local pluginKeys = {}
 -- nvim-tree
 -- alt + m 键打开关闭tree
 map("n", "<A-t>", ":NvimTreeToggle<CR>", opts)
+
+
 -- 列表快捷键
 pluginKeys.nvimTreeList = {
   -- 打开文件或文件夹
@@ -65,7 +67,6 @@ pluginKeys.nvimTreeList = {
   { key = "yrp",                            action = "copy_path" },
   { key = "yap",                            action = "copy_absolute_path" },
 }
-
 -- bufferline
 -- 左右Tab切换
 map("n", "<C-h>", ":BufferLineCyclePrev<CR>", opts)

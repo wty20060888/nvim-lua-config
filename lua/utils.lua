@@ -82,6 +82,13 @@ vim.api.nvim_create_user_command('DapRunLast',
   end,
   { nargs = "*"})
 
+--QtDesigner
+vim.api.nvim_create_user_command('QtDesigner',
+  function()
+    vim.cmd([[!PySide6-Designer &]])
+  end,
+  { nargs = "*"})
+
 
 vim.api.nvim_create_user_command('DapStart',
   function()
@@ -134,3 +141,5 @@ au BufNewFile,BufRead *.djangohtml,*.html set filetype=html
 ]])
 
 return M
+
+

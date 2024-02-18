@@ -130,16 +130,16 @@ require("nvim-tree").setup({
   view = {
     width = 20,
     --height = 30,
-    hide_root_folder = false,
+    --hide_root_folder = false,
     side = "left",
     preserve_window_proportions = false,
     number = false,
     relativenumber = false,
     signcolumn = "yes",
-    mappings = {
-      custom_only = false,
-      list = list_keys,
-    },
+    --mappings = {
+    --  custom_only = false,
+    --  list = list_keys,
+    --},
   },
   renderer = {
     indent_markers = {

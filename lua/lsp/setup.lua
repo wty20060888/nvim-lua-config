@@ -94,7 +94,7 @@ local lsp_flags = {
 require('lspconfig')['pyright'].setup {
   --on_attach = on_attach,
   --flags = lsp_flags,
-  cmd = { 'pyright-langserver', '--stdio' },
+  cmd = {'pyright-langserver', '--stdio' },
   root_dir = require('lspconfig').util.root_pattern('.git', 'manage.py', 'setup.py', 'pyproject.toml', 'poetry.lock','requirements.txt'),
   filetypes = { 'python' },
   capabilities = capabilities,

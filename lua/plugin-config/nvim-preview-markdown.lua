@@ -22,6 +22,10 @@ let g:mkdp_highlight_css = ''
 let g:mkdp_port = ''
 let g:mkdp_page_title = '「${name}」'
 let g:EclimCompletionMethod = 'omnifunc'
+"let g:mkdp_combine_preview = 0
+"let g:mkdp_combine_preview_auto_refresh = 1
+" By default the theme is defined according to the preferences of the system
+let g:mkdp_theme = 'dark'
 
 
 command! -nargs=* Run :call RunBuild(<f-args>)

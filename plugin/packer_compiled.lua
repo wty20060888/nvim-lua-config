@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/Users/wangtianyu/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?.lua;/Users/wangtianyu/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?/init.lua;/Users/wangtianyu/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?.lua;/Users/wangtianyu/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/Users/wangtianyu/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/lua/5.1/?.so"
+local package_path_str = "/Users/wangtianyu/.cache/nvim/packer_hererocks/2.1.1700008891/share/lua/5.1/?.lua;/Users/wangtianyu/.cache/nvim/packer_hererocks/2.1.1700008891/share/lua/5.1/?/init.lua;/Users/wangtianyu/.cache/nvim/packer_hererocks/2.1.1700008891/lib/luarocks/rocks-5.1/?.lua;/Users/wangtianyu/.cache/nvim/packer_hererocks/2.1.1700008891/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/Users/wangtianyu/.cache/nvim/packer_hererocks/2.1.1700008891/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -252,7 +252,7 @@ _G.packer_plugins = {
   ["nvim-tree.lua"] = {
     loaded = true,
     path = "/Users/wangtianyu/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
-    url = "https://github.com/kyazdani42/nvim-tree.lua"
+    url = "https://github.com/nvim-tree/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
     loaded = true,
@@ -280,14 +280,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/wangtianyu/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
-  },
-  ["preview-markdown.vim"] = {
-    commands = { "PreviewMarkdown" },
-    loaded = false,
-    needs_bufread = false,
-    only_cond = false,
-    path = "/Users/wangtianyu/.local/share/nvim/site/pack/packer/opt/preview-markdown.vim",
-    url = "https://github.com/skanehira/preview-markdown.vim"
   },
   ["telescope.nvim"] = {
     loaded = true,
@@ -369,18 +361,6 @@ if not vim.g.packer_custom_loader_enabled then
   table.insert(package.loaders, 1, lazy_load_module)
   vim.g.packer_custom_loader_enabled = true
 end
-
-
--- Command lazy-loads
-time([[Defining lazy-load commands]], true)
-pcall(vim.api.nvim_create_user_command, 'PreviewMarkdown', function(cmdargs)
-          require('packer.load')({'preview-markdown.vim'}, { cmd = 'PreviewMarkdown', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
-        end,
-        {nargs = '*', range = true, bang = true, complete = function()
-          require('packer.load')({'preview-markdown.vim'}, {}, _G.packer_plugins)
-          return vim.fn.getcompletion('PreviewMarkdown ', 'cmdline')
-      end})
-time([[Defining lazy-load commands]], false)
 
 
 _G._packer.inside_compile = false
