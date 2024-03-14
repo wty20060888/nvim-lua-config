@@ -138,6 +138,8 @@ set nofoldenable
 ]])
 vim.cmd([[
 au BufNewFile,BufRead *.djangohtml,*.html set filetype=html
+autocmd InsertLeave * :silent !im-select com.apple.keylayout.ABC
+autocmd FocusGained * silent !im-select com.apple.keylayout.ABC
 ]])
 
 return M

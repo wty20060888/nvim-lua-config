@@ -186,6 +186,8 @@ packer.startup({
     use "lukas-reineke/indent-blankline.nvim"
     -- 代码折叠
     use 'sheerun/vim-polyglot'
+    -- markdown脑图
+    use "Zeioth/markmap.nvim"
   end,
   config = {
     -- 并发数限制
